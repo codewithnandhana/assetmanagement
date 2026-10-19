@@ -1,0 +1,21 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Inventory Details</title>
+    <link rel="stylesheet" href="{% static 'inventory.css' %}">
+</head>
+
+<body>
+
+    <h1>Inventory Details</h1>
+
+    <p><strong>Item Type:</strong> {{ item.item_type }}</p>
+    <p><strong>Quantity:</strong> {{ item.quantity }}</p>
+    <p><strong>Threshold:</strong> {{ item.threshold }}</p>
+
+    <a href="{% url 'inventory_list' %}">Back to Inventory</a>
+
+</body>
+</html>

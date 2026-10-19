@@ -1,0 +1,53 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Assets</title>
+    <link rel="stylesheet" href="{% static 'assets.css' %}">
+</head>
+
+<body>
+    <nav>
+    <a href="{% url 'dashboard' %}">Dashboard</a>
+    <a href="{% url 'asset_list' %}">Assets</a>
+    <a href="{% url 'inventory_list' %}">Inventory</a>
+    <a href="{% url 'assignment_list' %}">Assignments</a>
+    <a href="{% url 'repair_list' %}">Repair Tickets</a>
+</nav>
+
+    <h1>Company Assets</h1>
+
+{% if perms.assets.add_asset %}
+    <a href="{% url 'asset_create' %}">Add Asset</a>
+{% endif %}
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Serial Number</th>
+            <th>Status</th>
+            <th>Actions</th>
+        </tr>
+
+        {% for asset in assets %}
+        <tr>
+            <td>{{ asset.name }}</td>
+            <td>{{ asset.asset_type }}</td>
+            <td>{{ asset.serial_number }}</td>
+            <td>{{ asset.status }}</td>
+            <td>
+    <a href="{% url 'asset_detail' asset.id %}" class="view-btn">👁️</a>
+{% if perms.assets.change_asset %}
+    <a href="{% url 'asset_edit' asset.id %}">Edit</a>
+{% endif %}
+{% if perms.assets.delete_asset %}
+    <a href="{% url 'asset_delete' asset.id %}">Delete</a>
+{% endif %}
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+
+</body>
+</html>

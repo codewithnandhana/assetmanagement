@@ -1,0 +1,39 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add Asset</title>
+    <link rel="stylesheet" href="{% static 'form.css' %}">
+</head>
+<body>
+
+    <h1>Add Asset</h1>
+
+    <form method="POST">
+        {% csrf_token %}
+
+        <label>Name:</label>
+        <input type="text" name="name"><br><br>
+
+        <label>Asset Type:</label>
+        <input type="text" name="asset_type"><br><br>
+
+        <label>Serial Number:</label>
+        <input type="text" name="serial_number"><br><br>
+
+        <label>Status:</label>
+        <select name="status">
+            <option value="Available">Available</option>
+            <option value="Assigned">Assigned</option>
+            <option value="Under Repair">Under Repair</option>
+        </select><br><br>
+
+        <label>Purchase Date:</label>
+        <input type="date" name="purchase_date"><br><br>
+
+        <button type="submit">Add Asset</button>
+
+    </form>
+
+</body>
+</html>

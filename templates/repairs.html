@@ -1,0 +1,54 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Repair Tickets</title>
+    <link rel="stylesheet" href="{% static 'repairs.css' %}">
+</head>
+
+<body>
+    <nav>
+    <a href="{% url 'dashboard' %}">Dashboard</a>
+    <a href="{% url 'asset_list' %}">Assets</a>
+    <a href="{% url 'inventory_list' %}">Inventory</a>
+    <a href="{% url 'assignment_list' %}">Assignments</a>
+    <a href="{% url 'repair_list' %}">Repair Tickets</a>
+</nav>
+
+    <h1>Repair Tickets</h1>
+
+{% if perms.assets.add_repairticket %}
+    <a href="{% url 'repair_create' %}" class="add-btn">+ Raise Ticket</a>
+{% endif %}
+    <table>
+        <tr>
+            <th>Asset</th>
+            <th>Issue</th>
+            <th>Status</th>
+            <th>Technician</th>
+            <th>Actions</th>
+        </tr>
+
+        {% for repair in repairs %}
+        <tr>
+            <td>{{ repair.asset.name }}</td>
+            <td>{{ repair.issue }}</td>
+            <td>{{ repair.status }}</td>
+            <td>{{ repair.assigned_technician.username }}</td>
+            <td>
+    <a href="{% url 'repair_detail' repair.id %}" class="view-btn">👁️</a>
+{% if perms.assets.change_repairticket %}
+    <a href="{% url 'repair_edit' repair.id %}" class="edit-btn">Edit</a>
+{% endif %}
+
+{% if perms.assets.delete_repairticket %}
+    <a href="{% url 'repair_delete' repair.id %}" class="delete-btn">Delete</a>
+{% endif %}
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+
+</body>
+</html>

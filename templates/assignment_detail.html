@@ -1,0 +1,22 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Assignment Details</title>
+    <link rel="stylesheet" href="{% static 'assignments.css' %}">
+</head>
+
+<body>
+
+    <h1>Assignment Details</h1>
+
+    <p><strong>Asset:</strong> {{ assignment.asset.name }}</p>
+    <p><strong>Employee:</strong> {{ assignment.employee.username }}</p>
+    <p><strong>Date Assigned:</strong> {{ assignment.date_assigned }}</p>
+    <p><strong>Date Returned:</strong> {{ assignment.date_returned|default:"Not Returned" }}</p>
+
+    <a href="{% url 'assignment_list' %}">Back to Assignments</a>
+
+</body>
+</html>

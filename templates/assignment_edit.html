@@ -1,0 +1,48 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Edit Assignment</title>
+    <link rel="stylesheet" href="{% static 'form.css' %}">
+</head>
+<body>
+    <h1>Edit Assignment</h1>
+    <form method="POST">
+        {% csrf_token %}
+
+        <label>Asset:</label>
+        <select name="asset">
+            {% for asset in assets %}
+                <option value="{{ asset.id }}"
+                    {% if assignment.asset.id == asset.id %}selected{% endif %}>
+                    {{ asset.name }}
+                </option>
+            {% endfor %}
+        </select>
+        <br><br>
+
+        <label>Employee:</label>
+        <select name="employee">
+            {% for employee in employees %}
+                <option value="{{ employee.id }}"
+                    {% if assignment.employee.id == employee.id %}selected{% endif %}>
+                    {{ employee.username }}
+                </option>
+            {% endfor %}
+        </select>
+        <br><br>
+
+        <label>Date Assigned:</label>
+        <input type="date" name="date_assigned"
+               value="{{ assignment.date_assigned|date:'Y-m-d' }}">
+        <br><br>
+
+        <label>Date Returned:</label>
+        <input type="date" name="date_returned"
+               value="{{ assignment.date_returned|date:'Y-m-d' }}">
+        <br><br>
+
+        <button type="submit">Update Assignment</button>
+    </form>
+</body>
+</html>

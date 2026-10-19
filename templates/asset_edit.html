@@ -1,0 +1,35 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Edit Asset</title>
+    <link rel="stylesheet" href="{% static 'form.css' %}">
+</head>
+<body>
+    <h1>Edit Asset</h1>
+    <form method="POST">
+        {% csrf_token %}
+
+        <label>Name:</label>
+        <input type="text" name="name" value="{{ asset.name }}"><br><br>
+
+        <label>Asset Type:</label>
+        <input type="text" name="asset_type" value="{{ asset.asset_type }}"><br><br>
+
+        <label>Serial Number:</label>
+        <input type="text" name="serial_number" value="{{ asset.serial_number }}"><br><br>
+
+        <label>Status:</label>
+        <select name="status">
+            <option value="Available" {% if asset.status == "Available" %}selected{% endif %}>Available</option>
+            <option value="Assigned" {% if asset.status == "Assigned" %}selected{% endif %}>Assigned</option>
+            <option value="Under Repair" {% if asset.status == "Under Repair" %}selected{% endif %}>Under Repair</option>
+        </select><br><br>
+
+        <label>Purchase Date:</label>
+        <input type="date" name="purchase_date" value="{{ asset.purchase_date|date:'Y-m-d' }}"><br><br>
+
+        <button type="submit">Update Asset</button>
+    </form>
+</body>
+</html>

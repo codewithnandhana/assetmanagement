@@ -1,0 +1,25 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add Inventory</title>
+    <link rel="stylesheet" href="{% static 'form.css' %}">
+</head>
+<body>
+    <h1>Add Inventory Item</h1>
+    <form method="POST">
+        {% csrf_token %}
+
+        <label>Item Type:</label>
+        <input type="text" name="item_type"><br><br>
+
+        <label>Quantity:</label>
+        <input type="number" name="quantity"><br><br>
+
+        <label>Threshold:</label>
+        <input type="number" name="threshold"><br><br>
+
+        <button type="submit">Add Item</button>
+    </form>
+</body>
+</html>

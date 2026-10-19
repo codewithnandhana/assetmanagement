@@ -1,0 +1,415 @@
+
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+button {
+  padding: 8px 15px;
+  cursor: pointer;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  margin-top: 20px;
+}
+table button {
+  margin-right: 10px;
+}
+
+th,
+td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: left;
+}
+
+th {
+  background-color: #f2f2f2;
+}
+
+input,
+select,
+textarea {
+  padding: 8px;
+  margin: 5px 0;
+}
+
+form {
+  margin-top: 15px;
+}
+
+.sidebar {
+  width: 200px;
+  padding: 20px;
+  border-right: 1px solid #ddd;
+}
+
+.sidebar-link {
+  display: block;
+  padding: 10px 0;
+}
+
+
+
+.navbar h2 {
+  margin: 0;
+}
+
+.navbar p {
+  margin-left: auto;
+  margin-right: 20px;
+  color: #c7d2fe;
+}
+
+
+.dashboard-card p {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.main-layout {
+  display: flex;
+ 
+}
+
+.sidebar {
+  width: 200px;
+  padding: 20px;
+  border-right: 1px solid #ddd;
+  box-sizing: border-box;
+}
+
+.dashboard {
+     width: 100%;
+  max-width: 900px;
+  padding: 10px;
+}
+
+.navbar button {
+  padding: 8px 16px;
+  cursor: pointer;
+}
+
+.page-card {
+  width: 100%;
+  max-width: 900px;
+}
+.profile-info {
+  background: linear-gradient(145deg, #ffffff, #f8fafc);
+  border: 1px solid #e2e8f0;
+  border-radius: 14px;
+  padding: 30px;
+  width: 500px;
+  margin: 30px auto;
+  box-sizing: border-box;
+  box-shadow: 0 8px 25px rgba(15, 23, 42, 0.08);
+}
+
+.profile-info p {
+  background: #f8fafc;
+  padding: 14px 18px;
+  margin: 10px 0;
+  border-radius: 8px;
+  border-left: 4px solid #4f46e5;
+  color: #334155;
+}
+
+.profile-heading {
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 25px;
+  color: #0f172a;
+  font-size: 30px;
+}
+
+
+.ticket-form input,
+.ticket-form select,
+.ticket-form textarea {
+  display: block;
+  width: 100%;
+  max-width: 500px;
+  box-sizing: border-box;
+}
+
+.ticket-form button {
+  margin-top: 10px;
+}
+
+
+.ticket-form label {
+  display: block;
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+
+.ticket-form textarea {
+  height: 100px;
+}
+
+
+
+html,
+body,
+#root {
+  margin: 0;
+  padding: 0;
+  height: auto;
+  min-height: 0;
+}
+
+
+.page-content {
+  flex: 1;
+  padding: 25px 40px;
+  
+  box-sizing: border-box;
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-box {
+  background: white;
+  width: 450px;
+  padding: 25px;
+  border: 1px solid #ddd;
+  box-sizing: border-box;
+}
+
+.modal-box h2 {
+  margin-top: 0;
+}
+
+.modal-box input,
+.modal-box select {
+  width: 100%;
+  padding: 8px;
+  margin: 8px 0;
+  box-sizing: border-box;
+}
+
+.modal-box button {
+  margin-right: 10px;
+}
+
+.login-page {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #0f172a, #1e1b4b);
+}
+
+.login-page form {
+  width: 380px;
+  padding: 35px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+  box-sizing: border-box;
+}
+
+.login-page h2 {
+  text-align: center;
+  margin-top: 0;
+  margin-bottom: 25px;
+  color: #111827;
+}
+
+.login-page input {
+  width: 100%;
+  padding: 12px;
+  margin: 8px 0;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  box-sizing: border-box;
+  outline: none;
+}
+
+.login-page input:focus {
+  border-color: #6366f1;
+  box-shadow: 0 0 0 2px rgba(99, 102, 241, 0.15);
+}
+
+.login-page button {
+  width: 100%;
+  padding: 12px;
+  margin-top: 15px;
+  border: none;
+  border-radius: 6px;
+  background: #6366f1;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.login-page button:hover {
+  background: #4f46e5;
+}
+
+
+
+body {
+  background-color: #f8fafc;
+  color: #1e293b;
+}
+
+
+.navbar {
+  padding: 18px 30px;
+  background: linear-gradient(90deg, #0f172a, #1e1b4b);
+  color: white;
+  display: flex;
+  align-items: center;
+}
+
+
+.navbar h2 {
+  margin: 0;
+  font-size: 22px;
+}
+
+
+
+.sidebar {
+  width: 220px;
+  padding: 25px 18px;
+  background-color: #111827;
+  color: white;
+  border-right: none;
+  box-sizing: border-box;
+}
+
+.sidebar h2 {
+  font-size: 18px;
+  margin-top: 0;
+  margin-bottom: 25px;
+}
+
+.sidebar-link {
+  display: block;
+  padding: 12px 14px;
+  margin-bottom: 6px;
+  color: #cbd5e1;
+  border-radius: 6px;
+}
+
+.sidebar-link:hover {
+  background-color: #312e81;
+  color: white;
+}
+
+.page-content {
+  flex: 1;
+  padding: 30px 40px;
+  box-sizing: border-box;
+}
+
+.page-content h1,
+.dashboard h1 {
+
+  color: #0f172a;
+}
+
+.dashboard-top {
+  display: flex;
+  align-items: flex-start;
+  gap: 50px;
+}
+
+.dashboard-cards {
+  display: grid;
+  grid-template-columns: 190px 190px;
+  gap: 20px;
+}
+
+.dashboard-card {
+  background: white;
+  border-radius: 10px;
+  padding: 25px;
+  width: 190px;
+    min-height: 120px;
+  box-sizing: border-box;
+  box-shadow: 0 4px 15px rgb(189, 167, 209)
+}
+
+.dashboard-card h3 {
+  margin-top: 0;
+  color: #2611cc;
+  font-size: 14px;
+}
+
+.dashboard-card p {
+  margin-bottom: 0;
+  color: #03030e;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.dashboard-chart {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgb(11, 10, 11);
+}
+
+.dashboard-chart h2 {
+  margin-top: 0;
+}
+
+table {
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(15, 23, 42, 0.06);
+}
+
+th {
+  background-color: #eef2ff;
+  color: #3730a3;
+}
+
+td {
+  background-color: white;
+}
+
+button {
+  background-color: #4f46e5;
+  color: white;
+  border: none;
+  border-radius: 6px;
+}
+
+button:hover {
+  background-color: #4338ca;
+}
+
+.profile-info {
+  background: white;
+  border: none;
+  border-radius: 10px;
+  padding: 25px;
+  max-width: 600px;
+  box-shadow: 0 4px 15px rgba(15, 23, 42, 0.08);
+}
+
+.ticket-form {
+  background: white;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(15, 23, 42, 0.08);
+}

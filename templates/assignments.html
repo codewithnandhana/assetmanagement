@@ -1,0 +1,79 @@
+
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Assignments</title>
+    <link rel="stylesheet" href="{% static 'assignments.css' %}">
+</head>
+
+<body>
+
+    <nav>
+        <a href="{% url 'dashboard' %}">Dashboard</a>
+        <a href="{% url 'asset_list' %}">Assets</a>
+        <a href="{% url 'inventory_list' %}">Inventory</a>
+        <a href="{% url 'assignment_list' %}">Assignments</a>
+        <a href="{% url 'repair_list' %}">Repair Tickets</a>
+        <a href="{% url 'logout' %}">Logout</a>
+    </nav>
+
+    <h1>Asset Assignments</h1>
+
+    {% if perms.assets.add_assignment %}
+        <a href="{% url 'assignment_create' %}" class="add-btn">
+            + Assign Asset
+        </a>
+    {% endif %}
+
+    <table>
+        <tr>
+            <th>Asset</th>
+            <th>Employee</th>
+            <th>Date Assigned</th>
+            <th>Date Returned</th>
+            <th>Actions</th>
+        </tr>
+
+        {% for assignment in assignments %}
+        <tr>
+            <td>{{ assignment.asset.name }}</td>
+
+            <td>{{ assignment.employee.username }}</td>
+
+            <td>{{ assignment.date_assigned }}</td>
+
+            <td>
+                {{ assignment.date_returned|default:"Not Returned" }}
+            </td>
+
+            <td>
+
+                <a href="{% url 'assignment_detail' assignment.id %}"
+                   class="view-btn">
+                    👁️
+                </a>
+
+                {% if perms.assets.change_assignment %}
+                    <a href="{% url 'assignment_edit' assignment.id %}"
+                       class="edit-btn">
+                        Edit
+                    </a>
+                {% endif %}
+
+                {% if perms.assets.delete_assignment %}
+                    <a href="{% url 'assignment_delete' assignment.id %}"
+                       class="delete-btn">
+                        Delete
+                    </a>
+                {% endif %}
+
+            </td>
+        </tr>
+        {% endfor %}
+
+    </table>
+
+</body>
+</html>

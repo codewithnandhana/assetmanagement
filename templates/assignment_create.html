@@ -1,0 +1,37 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add Assignment</title>
+    <link rel="stylesheet" href="{% static 'form.css' %}">
+</head>
+<body>
+    <h1>Assign Asset</h1>
+    <form method="POST">
+        {% csrf_token %}
+
+        <label>Asset:</label>
+        <select name="asset">
+            {% for asset in assets %}
+                <option value="{{ asset.id }}">
+                    {{ asset.name }}
+                </option>
+            {% endfor %}
+        </select>
+        <br><br>
+        <label>Employee:</label>
+        <select name="employee">
+            {% for employee in employees %}
+                <option value="{{ employee.id }}">
+                    {{ employee.username }}
+                </option>
+            {% endfor %}
+        </select>
+        <br><br>
+        <label>Date Assigned:</label>
+        <input type="date" name="date_assigned">
+        <br><br>
+        <button type="submit">Assign Asset</button>
+    </form>
+</body>
+</html>

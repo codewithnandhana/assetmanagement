@@ -1,0 +1,25 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Edit Inventory</title>
+    <link rel="stylesheet" href="{% static 'form.css' %}">
+</head>
+<body>
+    <h1>Edit Inventory Item</h1>
+    <form method="POST">
+        {% csrf_token %}
+
+        <label>Item Type:</label>
+        <input type="text" name="item_type" value="{{ item.item_type }}"><br><br>
+
+        <label>Quantity:</label>
+        <input type="number" name="quantity" value="{{ item.quantity }}"><br><br>
+
+        <label>Threshold:</label>
+        <input type="number" name="threshold" value="{{ item.threshold }}"><br><br>
+
+        <button type="submit">Update Item</button>
+    </form>
+</body>
+</html>

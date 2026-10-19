@@ -1,0 +1,23 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Asset Details</title>
+    <link rel="stylesheet" href="{% static 'assets.css' %}">
+</head>
+
+<body>
+
+    <h1>Asset Details</h1>
+
+    <p><strong>Name:</strong> {{ asset.name }}</p>
+    <p><strong>Type:</strong> {{ asset.asset_type }}</p>
+    <p><strong>Serial Number:</strong> {{ asset.serial_number }}</p>
+    <p><strong>Status:</strong> {{ asset.status }}</p>
+    <p><strong>Purchase Date:</strong> {{ asset.purchase_date }}</p>
+
+    <a href="{% url 'asset_list' %}">Back to Assets</a>
+
+</body>
+</html>

@@ -1,0 +1,22 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Repair Details</title>
+    <link rel="stylesheet" href="{% static 'repairs.css' %}">
+</head>
+
+<body>
+
+    <h1>Repair Ticket Details</h1>
+
+    <p><strong>Asset:</strong> {{ repair.asset.name }}</p>
+    <p><strong>Issue:</strong> {{ repair.issue }}</p>
+    <p><strong>Status:</strong> {{ repair.status }}</p>
+    <p><strong>Technician:</strong> {{ repair.assigned_technician.username }}</p>
+
+    <a href="{% url 'repair_list' %}">Back to Repair Tickets</a>
+
+</body>
+</html>

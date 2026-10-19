@@ -1,0 +1,58 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="{% static 'dashboard.css' %}">
+</head>
+
+
+
+<body>
+    <nav>
+    <a href="{% url 'dashboard' %}">Dashboard</a>
+    <a href="{% url 'asset_list' %}">Assets</a>
+    <a href="{% url 'inventory_list' %}">Inventory</a>
+    <a href="{% url 'assignment_list' %}">Assignments</a>
+    <a href="{% url 'repair_list' %}">Repair Tickets</a>
+        <a href="{% url 'logout' %}">Logout</a>
+</nav>
+ 
+
+    <h1>Asset Dashboard</h1>
+    <div class="dashboard-cards">
+
+    <div class="card">
+        <h3>Total Assets</h3>
+        <p>{{ total_assets }}</p>
+    </div>
+
+    <div class="card">
+        <h3>Available Assets</h3>
+        <p>{{ available_assets }}</p>
+    </div>
+
+    <div class="card">
+        <h3>Assigned Assets</h3>
+        <p>{{ assigned_assets }}</p>
+    </div>
+
+    <div class="card">
+        <h3>Under Repair</h3>
+        <p>{{ repair_assets }}</p>
+    </div>
+
+    <div class="card">
+        <h3>Low Stock Items</h3>
+        <p>{{ low_stock_items }}</p>
+    </div>
+
+    <div class="card">
+        <h3>Pending Repairs</h3>
+        <p>{{ pending_repairs }}</p>
+    </div>
+
+</div>
+
+</body>
+</html>

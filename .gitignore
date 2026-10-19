@@ -1,0 +1,15 @@
+.env
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+db.sqlite3
+staticfiles/
+node_modules/
+frontend/node_modules/
+frontend/build/
+frontend/.env
+assets_data.json
+users_data.json
+groups_data.json
+data.json
